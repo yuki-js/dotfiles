@@ -1,0 +1,2 @@
+;; C-h to delete a character
+(keyboard-translate ?\C-h ?\C-?)

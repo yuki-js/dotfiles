@@ -14,3 +14,9 @@
   
   (setenv "PATH" (concat (concat path path-separator) (getenv "PATH")))
   ) 
+;; set path for /Users/yjsnpi/.cargo/bin
+(let ((path "/Users/yjsnpi/.cargo/bin"))
+  (setq exec-path (cons path exec-path))
+  
+  (setenv "PATH" (concat (concat path path-separator) (getenv "PATH")))
+  ) 

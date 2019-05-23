@@ -15,6 +15,7 @@ echo "Installing..."
 
 brew install emacs
 brew install zsh
+brew install git
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)

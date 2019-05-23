@@ -6,12 +6,11 @@
 brew install emacs
 brew install zsh
 
-
 DOT_FILES=(.emacs.d .zshrc .zprofile)
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/codes/dotfiles/$file $HOME/$file
+    ln -s $HOME/dotfiles/$file $HOME/$file
 done
 
 chsh -s /usr/local/bin/zsh

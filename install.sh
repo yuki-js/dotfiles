@@ -26,6 +26,7 @@ DOT_FILES=(.emacs.d .zshrc .zprofile)
 for file in ${DOT_FILES[@]}
 do
     if [ -e "$HOME/codes/dotfiles/$file" ] ; then
+
 	      ln -s $HOME/codes/dotfiles/$file $HOME/$file
     else
 	      echo "File $HOME/codes/dotfiles/$file not found"

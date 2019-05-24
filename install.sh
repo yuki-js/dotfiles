@@ -22,7 +22,7 @@ DOT_FILES=(.emacs.d .zshrc .zprofile)
 
 for file in ${DOT_FILES[@]}
 do
-    ln -s $HOME/dotfiles/$file $HOME/$file
+    ln -s ./$file $HOME/$file
 done
 
 chsh -s /usr/local/bin/zsh
@@ -32,4 +32,6 @@ chsh -s /usr/local/bin/zsh
 defaults write com.apple.Finder AppleShowAllFiles true
 killall Finder
 
-echo "Finished!"
+echo "Finished! Opening Emacs... Press C-x C-c later."
+sleep 3
+emacs -nw

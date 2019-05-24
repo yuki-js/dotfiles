@@ -33,15 +33,19 @@ do
     fi
 done
 
+# change login shell
+
 sudo bash -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
 chsh -s /usr/local/bin/zsh
 
-# show hidden files
+# show hidden files & disable dashboard completely
 
 defaults write com.apple.Finder AppleShowAllFiles true
+defaults write com.apple.dashboard mcx-disabled -boolean YES
 killall Finder
+killall Dock
 
 
 echo "Finished! Opening Emacs... Press C-x C-c later."
 sleep 3
-emacs -nw
+emacs

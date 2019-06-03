@@ -31,7 +31,7 @@
  '(js2-mode-assume-strict t)
  '(js2-strict-missing-semi-warning nil)
  '(markdown-command "multimarkdown")
- '(package-selected-packages (quote (racer rustic tern-auto-complete dashboard))))
+ '(package-selected-packages (quote (yatex racer rustic tern-auto-complete dashboard))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

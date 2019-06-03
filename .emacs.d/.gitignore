@@ -2,7 +2,8 @@
 !init.el
 !inits/
 inits/*.elc
-inits/*.el ~
+inits/*.el~
+!inits/*.el
 !README.md
 !snippets
 !.gitignore

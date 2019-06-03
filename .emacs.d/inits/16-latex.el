@@ -9,7 +9,7 @@
 (add-to-list 'auto-mode-alist '("\\.tex\\'" . yatex-mode))
 (setq tex-command "platex")
 (setq bibtex-command "pbibtex")
-
+(setq YaTeX-inhibit-prefix-letter t)
 ;;reftex-mode
 (add-hook 'yatex-mode-hook
           #'(lambda ()

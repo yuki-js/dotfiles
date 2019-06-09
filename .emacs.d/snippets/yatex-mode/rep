@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: Report template
+# key: rep
+# --
+
+\documentclass[a4j]{jsarticle}
+
+\title{${1:Title}}
+\author{${2:学籍番号 201911308 青木 勇樹}}
+\date\today
+
+\begin{document}
+
+\maketitle
+
+${3:Text starts here}
+
+\end{document}

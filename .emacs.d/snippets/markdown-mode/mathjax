@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: Mathjax Header
+# key: mj
+# --
+latex input:    mmd-article-header  
+Title:          ${1:Untitled}  
+latex input:    mmd-article-begin-doc  
+latex footer:   mmd-memoir-footer  
+HTML header:    <script type="text/x-mathjax-config">MathJax.Hub.Config({asciimath2jax: {delimiters: [['$$','$$']]}});</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=AM_CHTML"></script>

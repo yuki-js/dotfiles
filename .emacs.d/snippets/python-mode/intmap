@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: intmap
+# key: intmap
+# --
+map(int,input().split())

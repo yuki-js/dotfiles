@@ -6,6 +6,7 @@ if ! [ -x "$(command -v brew)" ]; then
 fi
 
 brew cask install basictex
+brew install pandoc # install if you want to convert md to tex
 sudo tlmgr update --self --all
 sudo tlmgr paper a4
 sudo tlmgr install collection-langjapanese

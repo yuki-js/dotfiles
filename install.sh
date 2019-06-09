@@ -42,6 +42,7 @@ chsh -s /usr/local/bin/zsh
 
 defaults write com.apple.Finder AppleShowAllFiles true
 defaults write com.apple.dashboard mcx-disabled -boolean YES
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
 killall Finder
 killall Dock
 

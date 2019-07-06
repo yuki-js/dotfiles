@@ -7,4 +7,4 @@ fi
 brew install gcc
 brew install boost
 
-echo "Installed! Type 'virtualenv projname && cd projname && source bin/activate'"
+echo "Installed! Create symlink of /usr/local/bin/gcc & move lib to the appropriate place"

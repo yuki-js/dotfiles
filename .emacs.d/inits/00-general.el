@@ -21,3 +21,5 @@
 (when window-system (set-frame-size (selected-frame) 100 64))
 ;; auto close parenthesis
 (electric-pair-mode 1)
+;; don't create backup file
+(setq make-backup-files nil)

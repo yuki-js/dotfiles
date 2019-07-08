@@ -19,3 +19,5 @@
 (setq ns-pop-up-frames nil)
 
 (when window-system (set-frame-size (selected-frame) 100 64))
+;; auto close parenthesis
+(electric-pair-mode 1)

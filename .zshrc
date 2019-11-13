@@ -3,8 +3,8 @@ export LANG=ja_JP.UTF-8
 
 # Settings about history
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 # Ignore command duplicates
 setopt hist_ignore_dups
 # Ignore all of command duplicates

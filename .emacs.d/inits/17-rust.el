@@ -1,11 +1,21 @@
 (el-get-bundle rust-mode)
 (el-get-bundle racer)
-(el-get-bundle lsp-mode)
-
-(add-hook 'rust-mode-hook #'racer-mode)
-(add-hook 'racer-mode-hook #'eldoc-mode)
-(add-hook 'rust-mode-hook #'company-mode)
-(add-hook 'racer-mode-hook
-          (lambda () (local-set-key (kbd "TAB") #'company-complete)))
+(el-get-bundle flycheck-rust)
 
 
+(add-to-list 'exec-path (expand-file-name "~/.cargo/bin/"))
+
+(eval-after-load "rust-mode"
+  '(setq-default rust-format-on-save t))
+
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
+
+(add-hook 'rust-mode-hook (lambda ()
+                            (racer-mode)
+                            (flycheck-rust-setup)))
+;;; racerの補完サポートを使う
+(add-hook 'racer-mode-hook (lambda ()
+                             (company-mode)
+                             (eldoc-mode)
+                             ))

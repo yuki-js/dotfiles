@@ -26,18 +26,18 @@ brew cask install emacs
 brew cask install iterm2
 brew install zsh
 brew install git
-brew install google-chrome
+brew cask install google-chrome
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)
 
 for file in ${DOT_FILES[@]}
 do
-    if [ -e "./dotfiles/$file" ] ; then
+    if [ -e "$HOME/codes/dotfiles/$file" ] ; then
 
-	      ln -s ./dotfiles/$file $HOME/$file
+	      ln -s $HOME/codes/dotfiles/$file $HOME/$file
     else
-	      echo "File ./dotfiles/$file not found"
+	      echo "File $HOME/codes/dotfiles/$file not found"
     fi
 done
 

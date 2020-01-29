@@ -1,8 +1,15 @@
 #!/bin/bash
 
+
+
 # ask
 
-echo "Check if this file is $HOME/codes/dotfiles/install.sh"
+# echo "Check if this file is $HOME/codes/dotfiles/install.sh"
+
+if [ $(cd $(dirname $0); pwd) != "$HOME/codes/dotfiles" ]; then
+    echo "Rerun this file at $HOME/codes/dotfiles/install.sh"
+    exit
+fi
 
 read -p "Continue (y/n)?" CONT
 if [ "$CONT" != "y" ]; then
@@ -19,6 +26,7 @@ brew cask install emacs
 brew cask install iterm2
 brew install zsh
 brew install git
+brew cask install google-chrome
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)

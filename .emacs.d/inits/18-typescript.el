@@ -3,6 +3,7 @@
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
 
 (el-get-bundle tide)
+(el-get-bundle prettier-js)
 
 (setq typescript-indent-level 2)
 
@@ -14,7 +15,6 @@
             (setq flycheck-check-syntax-automatically '(save mode-enabled))
             (eldoc-mode +1)
             (tide-hl-identifier-mode +1)
+            (prettier-js-mode)
             (company-mode +1)
             (global-set-key (kbd "M-*") 'tide-jump-back)))
-
-(add-hook 'before-save-hook 'tide-format-before-save)

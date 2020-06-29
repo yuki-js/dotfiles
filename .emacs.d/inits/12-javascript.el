@@ -1,5 +1,9 @@
-(el-get-bundle js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(el-get-bundle rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.js\\'" . rjsx-mode))
+
+(add-hook 'rjsx-mode-hook
+          (lambda()
+            (prettier-js-mode)))
 
 (custom-set-variables
 

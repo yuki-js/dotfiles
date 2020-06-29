@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: code
+# key: code
+# --
+#+BEGIN_SRC ${1:language} :exports code
+$2
+#+END_SRC
+$0

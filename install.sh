@@ -27,7 +27,6 @@ brew cask install iterm2
 brew install zsh
 brew install git
 brew cask install google-chrome
-brew cask install visual-studio-code
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)

@@ -27,6 +27,7 @@ brew cask install iterm2
 brew install zsh
 brew install git
 brew cask install google-chrome
+brew cask install visual-studio-code
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)
@@ -55,6 +56,4 @@ killall Finder
 killall Dock
 
 
-echo "Finished! Opening Emacs... Press C-x C-c later."
-sleep 3
-emacs
+echo "Finished!"

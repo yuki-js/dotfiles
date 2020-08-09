@@ -92,7 +92,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>1290 1038 620 392 0 0 3200 1777 </string>
+	<string>0 1385 620 392 0 0 3200 1777 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 3200 1777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -100,7 +100,7 @@
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 1348 3200 429 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>79 309 710 573 0 0 3200 1777 </string>
+	<string>4512 605 710 552 3200 360 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>128 202 1858 571 0 0 2880 1597 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -1363,20 +1363,29 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.6</string>
-		<string>3.3.8</string>
-		<string>3.3.4</string>
-		<string>3.3.1</string>
-		<string>3.3.3</string>
 		<string>3.3.5</string>
-		<string>3.3.7</string>
+		<string>3.3.3</string>
+		<string>3.3.1</string>
+		<string>3.3.8</string>
+		<string>3.3.12</string>
+		<string>3.3.6</string>
+		<string>3.3.11</string>
+		<string>3.3.4</string>
+		<string>3.3.2</string>
 		<string>3.3.9</string>
 		<string>3.2.9</string>
 		<string>3.3.0</string>
-		<string>3.3.2</string>
+		<string>3.3.7</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{3200, 360}, {2560, 1440}}</string>
+		<key>topLeft</key>
+		<string>{4177, 1559}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -1389,7 +1398,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FCCA85BA-6668-4202-8603-D7E6CD13A4C5</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>250</integer>
+	<integer>297</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2149,6 +2158,8 @@
 	<false/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<false/>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -2158,15 +2169,15 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-05-01T09:37:09Z</date>
+	<date>2020-07-25T04:40:01Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
-	<integer>3914672730</integer>
+	<integer>2851897112</integer>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -2196,7 +2207,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.9</string>
+	<string>3.3.12</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

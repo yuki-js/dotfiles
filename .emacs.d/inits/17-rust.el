@@ -1,17 +1,21 @@
+(el-get-bundle lsp-mode)
 (el-get-bundle racer)
-(el-get-bundle company)
-(el-get-bundle flycheck-rust)
+(el-get-bundle rustic)
 
-(with-eval-after-load 'rust-mode
-  (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
-(add-hook 'rust-mode-hook #'racer-mode)
+(setq auto-mode-alist (cl-remove "\\.rs\\'" auto-mode-alist :test 'equal :key 'car))
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rustic-mode))
+
+(add-hook 'rustic-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
-
 (add-hook 'racer-mode-hook #'company-mode)
 
-(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(define-key rustic-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+
 (setq company-tooltip-align-annotations t)
 
-(eval-after-load "rust-mode"
-  '(setq-default rust-format-on-save t))
+(setq racer-command-timeout 0)
+(setq racer-eldoc-timeout 0.5)
+
+
+(setq-default rustic-format-trigger 'on-save)

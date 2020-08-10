@@ -30,7 +30,7 @@
  '(js2-mode-assume-strict t)
  '(js2-strict-missing-semi-warning nil)
  '(markdown-command "multimarkdown")
- '(package-selected-packages (quote (mmm-mode racer dashboard company))))
+ '(rustic-format-trigger (quote on-save)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -9,3 +9,4 @@ inits/*.el~
 !snippets/
 !snippets/*
 !snippets/**
+!early-init.el

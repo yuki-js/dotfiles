@@ -1,11 +1,3 @@
-(add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
-(unless (require 'el-get nil 'noerror)
-  (with-current-buffer
-      (url-retrieve-synchronously "https://raw.githubusercontent.com/dimitri/el-get/master/el-get-install.el")
-    (goto-char (point-max))
-    (eval-print-last-sexp)))
-(add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
-
 (el-get-bundle emacs-jp/init-loader)
 
 ;; bytecompile init-loader
@@ -30,7 +22,8 @@
  '(js2-mode-assume-strict t)
  '(js2-strict-missing-semi-warning nil)
  '(markdown-command "multimarkdown")
- '(rustic-format-trigger (quote on-save)))
+ '(package-selected-packages '(dashboard vue-mode org rustic racer company))
+ '(rustic-format-trigger 'on-save))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

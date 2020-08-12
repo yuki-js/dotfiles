@@ -6,12 +6,3 @@
     (eval-print-last-sexp)))
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 
-(el-get-bundle emacs-jp/init-loader)
-
-;; bytecompile init-loader
-(setq init-loader-byte-compile nil)
-
-;; show logs only when error occurs
-(setq init-loader-show-log-after-init 'error-only)
-
-(init-loader-load "~/.emacs.d/inits")

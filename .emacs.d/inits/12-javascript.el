@@ -5,17 +5,14 @@
           (lambda()
             (prettier-js-mode)))
 
-(custom-set-variables
+(setq js-indent-level 2)
+(setq js-switch-indent-offset 2)
+(setq js2-include-node-externs t)
+(setq js2-indent-switch-body t)
+(setq js2-missing-semi-one-line-override t)
+(setq js2-mode-assume-strict t)
+(setq js2-strict-missing-semi-warning nil)
 
- '(js-indent-level 2)
- '(js-switch-indent-offset 2)
- '(js2-include-node-externs t)
- '(js2-indent-switch-body t)
- '(js2-missing-semi-one-line-override t)
- '(js2-mode-assume-strict t)
- '(js2-strict-missing-semi-warning nil)
-
- )
 
 ;;tern strongly requires node so currently disabled
 

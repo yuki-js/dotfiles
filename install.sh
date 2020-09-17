@@ -18,15 +18,29 @@ fi
 
 echo "Installing..."
 
+if [ "$(uname)" == 'Darwin' ]; then
 
-# install homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    # install homebrew
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew cask install emacs
-brew cask install iterm2
-brew install zsh
-brew install git
-brew cask install google-chrome
+    brew cask install emacs
+    brew cask install iterm2
+    brew install zsh
+    brew install git
+    brew cask install google-chrome
+
+
+    # show hidden files & disable dashboard completely
+
+    defaults write com.apple.Finder AppleShowAllFiles true
+    defaults write com.apple.dashboard mcx-disabled -boolean YES
+    defaults write com.apple.screencapture location ~/Pictures/Screenshots
+    killall Finder
+    killall Dock
+
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && ! [ -x "$(command -v apt)" ]; then
+    sudo apt install emacs zsh git -y
+fi
 
 # symlink dotfiles
 DOT_FILES=(.emacs.d .zshrc .zprofile)
@@ -46,13 +60,6 @@ done
 sudo bash -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
 chsh -s /usr/local/bin/zsh
 
-# show hidden files & disable dashboard completely
-
-defaults write com.apple.Finder AppleShowAllFiles true
-defaults write com.apple.dashboard mcx-disabled -boolean YES
-defaults write com.apple.screencapture location ~/Pictures/Screenshots
-killall Finder
-killall Dock
 
 
 echo "Finished!"

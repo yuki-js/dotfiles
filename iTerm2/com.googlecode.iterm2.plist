@@ -98,9 +98,9 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>1244 571 928 394 0 0 2880 1597 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 1348 3200 429 0 0 3200 1777 </string>
+	<string>746 494 1865 1283 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>4512 605 710 552 3200 360 2560 1417 </string>
+	<string>114 222 906 688 0 0 3200 1777 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>128 202 1858 571 0 0 2880 1597 </string>
 	<key>NSWindow Frame iTerm Window 3</key>
@@ -960,23 +960,23 @@
 			<key>Guid</key>
 			<string>F9A8EA7B-6FCC-4946-89B9-0ED40FC49EB7</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
-			<true/>
+			<false/>
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string>“</string>
+			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>@</string>
+			<string></string>
 			<key>HotKey Key Code</key>
-			<integer>33</integer>
+			<integer>0</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>2</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>524288</integer>
+			<integer>0</integer>
 			<key>HotKey Window Animates</key>
 			<false/>
 			<key>HotKey Window AutoHides</key>
@@ -1398,7 +1398,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>FCCA85BA-6668-4202-8603-D7E6CD13A4C5</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>297</integer>
+	<integer>328</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -2169,7 +2169,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-07-25T04:40:01Z</date>
+	<date>2020-09-07T17:20:49Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateGroupIdentifier</key>
@@ -2177,7 +2177,7 @@
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<true/>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>

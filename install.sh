@@ -38,7 +38,7 @@ if [ "$(uname)" == 'Darwin' ]; then
     killall Finder
     killall Dock
 
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && ! [ -x "$(command -v apt)" ]; then
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && [ -x "$(command -v apt)" ]; then
     sudo apt install emacs zsh git -y
 
 else

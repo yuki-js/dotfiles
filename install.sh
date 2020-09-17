@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -eu
 
 # ask
 
@@ -61,9 +61,7 @@ done
 
 # change login shell
 
-sudo bash -c 'echo "/usr/local/bin/zsh" >> /etc/shells'
-chsh -s /usr/local/bin/zsh
-
-
+sudo bash -c "echo $(which zsh) >> /etc/shells"
+chsh -s $(which zsh)
 
 echo "Finished!"

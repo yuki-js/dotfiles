@@ -40,6 +40,10 @@ if [ "$(uname)" == 'Darwin' ]; then
 
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && ! [ -x "$(command -v apt)" ]; then
     sudo apt install emacs zsh git -y
+
+else
+    echo "This OS is not supported yet"
+    exit 1
 fi
 
 # symlink dotfiles

@@ -67,6 +67,11 @@ else
     export CLICOLOR=1
     export LSCOLORS=DxGxcxdxCxegedabagacad
 
+
+    if [ -x ~/.machinespecificrc ]; then
+        . ~/.machinespecificrc
+    fi
+    
     # End Emacs Fix
 fi
 

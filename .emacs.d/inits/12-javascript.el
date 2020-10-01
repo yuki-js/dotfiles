@@ -1,5 +1,6 @@
 (el-get-bundle rjsx-mode)
 (el-get-bundle tern)
+(el-get-bundle flycheck)
 (el-get-bundle auto-complete)
 (el-get-bundle tern-auto-complete)
 
@@ -11,6 +12,7 @@
           (lambda ()
             (tern-mode t)
             (auto-complete-mode)
+            (flycheck-mode)
             (tern-ac-setup)
             (prettier-js-mode)))
 

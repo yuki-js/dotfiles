@@ -59,7 +59,7 @@ do
     fi
 done
 
-git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile $HOME/.gitignore_global
 
 # change login shell
 

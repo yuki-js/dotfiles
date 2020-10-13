@@ -1,0 +1,11 @@
+# .DS_Store higaisha no kai
+.DS_Store
+
+# I like Emacs
+*~
+\#*\#
+.\#*
+*.elc
+
+# I like Tern LSP
+.tern-port

@@ -47,7 +47,7 @@ else
 fi
 
 # symlink dotfiles
-DOT_FILES=(.emacs.d .zshrc .zprofile)
+DOT_FILES=(.emacs.d .zshrc .zprofile .gitignore_global)
 
 for file in ${DOT_FILES[@]}
 do
@@ -58,6 +58,8 @@ do
 	      echo "File $HOME/codes/dotfiles/$file not found"
     fi
 done
+
+git config --global core.excludesfile $HOME/.gitignore_global
 
 # change login shell
 

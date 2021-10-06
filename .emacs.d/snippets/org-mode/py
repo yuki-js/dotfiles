@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: ipython block
+# key: py
+# --
+#+BEGIN_SRC ipython :session /tmp/kernel-ssh.json :exports both
+$1
+#+END_SRC
+$0

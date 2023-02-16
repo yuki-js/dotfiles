@@ -10,3 +10,5 @@
 # I like Tern LSP
 .tern-port
 .devcontainer
+
+node_modules  

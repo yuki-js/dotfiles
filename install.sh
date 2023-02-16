@@ -39,7 +39,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     killall Dock
 
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && [ -x "$(command -v apt)" ]; then
-    sudo apt install emacs zsh git -y
+    # sudo apt install emacs zsh git -y
+    sudo apt install zsh git -y
 
 else
     echo "This OS is not supported yet"
@@ -47,7 +48,9 @@ else
 fi
 
 # symlink dotfiles
-DOT_FILES=(.emacs.d .zshrc .zprofile .gitignore_global)
+# DOT_FILES=(.emacs.d .zshrc .zprofile .gitignore_global)
+DOT_FILES=(.zshrc .zprofile .gitignore_global)
+
 
 for file in ${DOT_FILES[@]}
 do

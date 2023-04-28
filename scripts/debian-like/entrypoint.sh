@@ -5,4 +5,5 @@ set -eu
 
 ./prerequisites.sh
 ./shell-experience.sh
+./wsl.sh
 ./docker.sh

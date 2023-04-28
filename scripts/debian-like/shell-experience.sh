@@ -26,3 +26,6 @@ done
 git config --global core.excludesfile $HOME/.gitignore_global
 # set zsh as default shell
 chsh -s $(which zsh)
+
+git config --global user.email "me@aoki.app"
+git config --global user.name "yuki-js"

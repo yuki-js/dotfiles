@@ -1,72 +1,63 @@
-#!/bin/bash
+#!/bin/sh
+
+
+# WELCOME TO DOTFILES INSTALLER
+# This script bootstrap a new machine with dotfiles
+# Created by: @yuki-js
+# Made for: @yuki-js
 
 set -eu
 
-# ask
+# Variables
+DOTFILES_REPO_URL="https://github.com/yuki-js/dotfiles.git"
+OWNER="yuki-js"
 
-# echo "Check if this file is $HOME/codes/dotfiles/install.sh"
+# abort if superuser
+if [ $(id -u) -eq 0 ]; then
+  echo "Fatal error: This script must not be run as root"
+  exit 1
+fi
+MAKE_ME_ROOT="sudo"
 
-if [ $(cd $(dirname $0); pwd) != "$HOME/codes/dotfiles" ]; then
-    echo "Rerun this file at $HOME/codes/dotfiles/install.sh"
-    exit
+# Confirmation phase
+echo "Hello! This script will install dotfiles to your machine."
+echo "What is your GitHub name?"
+read GHUSER
+
+# check if the GHUSER is OWNER
+if [ $GHUSER != $OWNER ]; then
+  echo "Sorry, this script is only for $OWNER"
+  exit 1
 fi
 
-read -p "Continue (y/n)?" CONT
-if [ "$CONT" != "y" ]; then
-    exit
+# Confirm that the user wants to begin the installation
+echo "Hello $GHUSER!"
+echo "The dotfiles will be installed to $HOME/codes/dotfiles (if not exist, will be created)"
+echo "Do you want to begin the installation? (y/N)"
+read CONFIRM
+
+if [ $CONFIRM != "y" ]; then
+  echo "Aborting installation"
+  exit 1
 fi
 
-echo "Installing..."
+# Prerequisites installation phase
+echo "Installing prerequisites..."
+$MAKE_ME_ROOT apt-get update
+$MAKE_ME_ROOT apt-get install -y git
 
-if [ "$(uname)" == 'Darwin' ]; then
+# make `codes` directory
+echo "Making codes directory..."
+mkdir -p $HOME/codes
+cd $HOME/codes
 
-    # install homebrew
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# Clone dotfiles repository
+echo "Cloning dotfiles repository..."
+git clone $DOTFILES_REPO_URL dotfiles
 
-    brew cask install emacs
-    brew cask install iterm2
-    brew install zsh
-    brew install git
-    brew cask install google-chrome
+# Switch and run `scripts/entrypoint.sh`
+echo "Switching to entrypoint.sh..."
+cd dotfiles
+exec sh scripts/entrypoint.sh
 
-
-    # show hidden files & disable dashboard completely
-
-    defaults write com.apple.Finder AppleShowAllFiles true
-    defaults write com.apple.dashboard mcx-disabled -boolean YES
-    defaults write com.apple.screencapture location ~/Pictures/Screenshots
-    killall Finder
-    killall Dock
-
-elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ] && [ -x "$(command -v apt)" ]; then
-    # sudo apt install emacs zsh git -y
-    sudo apt install zsh git -y
-
-else
-    echo "This OS is not supported yet"
-    exit 1
-fi
-
-# symlink dotfiles
-# DOT_FILES=(.emacs.d .zshrc .zprofile .gitignore_global)
-DOT_FILES=(.zshrc .zprofile .gitignore_global)
-
-
-for file in ${DOT_FILES[@]}
-do
-    if [ -e "$HOME/codes/dotfiles/$file" ] ; then
-
-	      ln -s $HOME/codes/dotfiles/$file $HOME/$file
-    else
-	      echo "File $HOME/codes/dotfiles/$file not found"
-    fi
-done
-
-git config --global core.excludesfile $HOME/.gitignore_global
-
-# change login shell
-
-sudo bash -c "echo $(which zsh) >> /etc/shells"
-chsh -s $(which zsh)
-
-echo "Finished!"
+# Finish

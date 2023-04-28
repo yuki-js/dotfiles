@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: Insert math
-# key: ma
-# --
-$$ $1 $$ $2

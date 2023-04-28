@@ -25,4 +25,4 @@ done
 
 git config --global core.excludesfile $HOME/.gitignore_global
 # set zsh as default shell
-$MAKE_ME_ROOT chsh -s $(which zsh) $USER
+chsh -s $(which zsh)

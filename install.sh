@@ -45,7 +45,7 @@ fi
 # Prerequisites installation phase
 echo "Installing prerequisites..."
 $MAKE_ME_ROOT apt-get update
-$MAKE_ME_ROOT apt-get install -y git
+$MAKE_ME_ROOT apt-get install -y git bash
 
 # make `codes` directory
 echo "Making codes directory..."
@@ -54,7 +54,7 @@ cd $HOME/codes
 
 # Clone dotfiles repository
 echo "Cloning dotfiles repository..."
-git clone $DOTFILES_REPO_URL -b $BRANCH dotfiles
+git clone $DOTFILES_REPO_URL -b $BRANCH --depth 1 dotfiles
 
 # Switch and run `scripts/entrypoint.sh`
 echo "Switching to entrypoint.sh..."

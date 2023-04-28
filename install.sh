@@ -11,7 +11,7 @@ set -eu
 # Variables
 DOTFILES_REPO_URL="https://github.com/yuki-js/dotfiles.git"
 OWNER="yuki-js"
-BRANCH="refinement"
+BRANCH=${DF_BRANCH:-"master"}
 
 # abort if superuser
 if [ $(id -u) -eq 0 ]; then
@@ -27,12 +27,11 @@ read GHUSER
 
 # check if the GHUSER is OWNER
 if [ $GHUSER != $OWNER ]; then
-  echo "Sorry, this script is only for $OWNER"
+  echo "Sorry, this script is not for you."
   exit 1
 fi
 
 # Confirm that the user wants to begin the installation
-echo "Hello $GHUSER!"
 echo "The dotfiles will be installed to $HOME/codes/dotfiles (if not exist, will be created)"
 echo -n "Do you want to begin the installation? (y/N) "
 read CONFIRM

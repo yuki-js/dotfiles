@@ -1,16 +1,13 @@
 # dotfiles
 
-## how to use
+## How to install
 
-1. clone this repository into ~/codes/dotfiles
-2. `./install.sh`
+1. Connect to the internet
+2. Run `curl -fSsL https://raw.githubusercontent.com/yuki-js/dotfiles/master/install.sh | sh`
 
-## miscellaneous
+## Configuration
 
-in .gitconfig
-
+```sh
+export DF_NO_DOCKER=1 # Disable docker installation
+export DF_BRANCH=master # Use master branch
 ```
-[core]
-editor = /Applications/Emacs.app/Contents/MacOS/bin/emacsclient --alternate-editor /Applications/Emacs.app/Contents/MacOS/Emacs
-```
-

@@ -58,12 +58,3 @@ export LSCOLORS=DxGxcxdxCxegedabagacad
 if [ -x ~/.machinespecificrc ]; then
     . ~/.machinespecificrc
 fi
-
-
-
-# path
-
-export PATH="$HOME/.nodebrew/current/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.yarn/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"

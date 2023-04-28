@@ -17,4 +17,5 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   curl \
   git \
   jq \
-  make
+  make \
+  zsh

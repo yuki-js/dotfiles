@@ -22,7 +22,7 @@ MAKE_ME_ROOT="sudo"
 
 # Confirmation phase
 echo "Hello! This script will install dotfiles to your machine."
-echo "What is your GitHub name?"
+echo -n "What is your GitHub name? "
 read GHUSER
 
 # check if the GHUSER is OWNER
@@ -34,7 +34,7 @@ fi
 # Confirm that the user wants to begin the installation
 echo "Hello $GHUSER!"
 echo "The dotfiles will be installed to $HOME/codes/dotfiles (if not exist, will be created)"
-echo "Do you want to begin the installation? (y/N)"
+echo -n "Do you want to begin the installation? (y/N) "
 read CONFIRM
 
 if [ $CONFIRM != "y" ]; then

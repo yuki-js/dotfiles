@@ -1,10 +1,10 @@
 #!/bin/bash
-set -eu
+set -u +e
 
 
 # abort if superuser
 if [ $(id -u) -eq 0 ]; then
-  echo "Fatal error: This script must not be run as root"
+  echo -e "\e[31mFatal error: This script must not be run as root\e[m"
   exit 1
 fi
 MAKE_ME_ROOT="sudo"
@@ -13,6 +13,15 @@ MAKE_ME_ROOT="sudo"
 # install docker from official script
 curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
 $MAKE_ME_ROOT sh /tmp/get-docker.sh
+
+# if install failed, abort with notification
+if [ $? -ne 0 ]; then
+  echo -e "\e[31mDocker installation failed\e[m"
+  echo "Please check the official installation guide: https://docs.docker.com/engine/install/debian/"
+  # bell
+  echo -e "\a"
+  exit 1
+fi
 
 # add user to docker group
 $MAKE_ME_ROOT usermod -aG docker $USER
@@ -24,4 +33,6 @@ $MAKE_ME_ROOT usermod -aG docker $USER
 if [ -f /proc/driver/nvidia/version ]; then
   echo "NVIDIA GPU is available"
   echo "Please install NVIDIA Container Toolkit"
+  # bell
+  echo -e "\a"
 fi

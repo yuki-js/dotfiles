@@ -11,6 +11,7 @@ set -eu
 # Variables
 DOTFILES_REPO_URL="https://github.com/yuki-js/dotfiles.git"
 OWNER="yuki-js"
+BRANCH="refinement"
 
 # abort if superuser
 if [ $(id -u) -eq 0 ]; then
@@ -53,11 +54,11 @@ cd $HOME/codes
 
 # Clone dotfiles repository
 echo "Cloning dotfiles repository..."
-git clone $DOTFILES_REPO_URL dotfiles
+git clone $DOTFILES_REPO_URL -b $BRANCH dotfiles
 
 # Switch and run `scripts/entrypoint.sh`
 echo "Switching to entrypoint.sh..."
 cd dotfiles
-exec sh scripts/entrypoint.sh
+bash scripts/entrypoint.sh
 
 # Finish

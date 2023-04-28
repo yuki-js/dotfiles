@@ -17,5 +17,8 @@ if [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
 fi
 
 # cp /etc/wsl.conf
-$MAKE_ME_ROOT cp -f /etc/wsl.conf /etc/wsl.conf.bak
-$MAKE_ME_ROOT cp -f $HOME/codes/dotfiles/cfg/wsl.conf /etc/wsl.conf
+# backup if already exist
+if [ -f /etc/wsl.conf ]; then
+  $MAKE_ME_ROOT cp -f /etc/wsl.conf /etc/wsl.conf.bak
+fi
+$MAKE_ME_ROOT cp -f $HOME/codes/dotfiles/cfgs/wsl.conf /etc/wsl.conf

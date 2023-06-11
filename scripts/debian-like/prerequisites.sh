@@ -18,4 +18,6 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   git \
   jq \
   make \
-  zsh
+  zsh \
+  openssh-server \
+  ssh-import-id

@@ -23,10 +23,10 @@ DISTRO_FAMILY=
 # look at ID_LIKE
 if [ -f /etc/os-release ]; then
   . /etc/os-release
-  if [ -n "$ID_LIKE" ] && [ "$ID_LIKE" = "debian" ]; then
-    DISTRO_FAMILY="debian"
-  fi
+  
   if [ -n "$ID" ] && [ "$ID" = "debian" ]; then
+    DISTRO_FAMILY="debian"
+  elif [ -n "$ID_LIKE" ] && [ "$ID_LIKE" = "debian" ]; then
     DISTRO_FAMILY="debian"
   fi
 fi

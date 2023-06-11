@@ -26,6 +26,9 @@ if [ -f /etc/os-release ]; then
   if [ -n "$ID_LIKE" ] && [ "$ID_LIKE" = "debian" ]; then
     DISTRO_FAMILY="debian"
   fi
+  if [ -n "$ID" ] && [ "$ID" = "debian" ]; then
+    DISTRO_FAMILY="debian"
+  fi
 fi
 
 # switch by distro family

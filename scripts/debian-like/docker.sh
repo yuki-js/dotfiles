@@ -1,6 +1,11 @@
 #!/bin/bash
 set -u +e
 
+# if DF_NO_DOCKER is 1, skip docker installation
+if [ "$DF_NO_DOCKER" = "1" ]; then
+  echo "Skip docker installation"
+  exit 0
+fi
 
 # abort if superuser
 if [ $(id -u) -eq 0 ]; then

@@ -1,8 +1,8 @@
 #!/bin/bash
 set -u +e
 
-# if DF_NO_DOCKER is 1, skip docker installation
-if [ "$DF_NO_DOCKER" = "1" ]; then
+# if DF_NO_DOCKER is present, and DF_NO_DOCKER is 1, skip docker installation
+if [ -n "${DF_NO_DOCKER:-}" ] && [ "$DF_NO_DOCKER" = "1" ]; then
   echo "Skip docker installation"
   exit 0
 fi

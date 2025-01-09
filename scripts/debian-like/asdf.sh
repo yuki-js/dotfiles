@@ -19,3 +19,19 @@ asdf plugin add python https://github.com/asdf-community/asdf-python.git
 PYTHON_LATEST_VERSION=3.13.1
 asdf install python $PYTHON_LATEST_VERSION
 asdf global python $PYTHON_LATEST_VERSION
+
+
+cat <<EOF
+Installed asdf and set up Node.js and Python.
+
+You can also install many other softwares. e.g.:
+- Kubectl: https://github.com/asdf-community/asdf-kubectl
+- Rust: https://github.com/asdf-community/asdf-rust
+- Go: https://github.com/asdf-community/asdf-golang
+- Java: https://github.com/halcyon/asdf-java
+
+$ asdf plugin add NAME REPO_URL
+$ asdf list all nodejs
+$ asdf install NAME VERSION
+$ asdf global NAME VERSION
+EOF

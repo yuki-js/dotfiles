@@ -23,7 +23,7 @@ $MAKE_ME_ROOT curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/ap
 $MAKE_ME_ROOT chmod a+r /etc/apt/keyrings/docker.asc
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/docker.list 
 $MAKE_ME_ROOT apt update
-$MAKE_ME_ROOT apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+$MAKE_ME_ROOT apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y --no-install-recommends
 
 # if install failed, abort with notification
 if [ $? -ne 0 ]; then

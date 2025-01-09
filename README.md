@@ -4,8 +4,9 @@
 
 1. Connect to the internet
 2. Run the following code:
+
 ```sh
-sh -c "$(curl -fSsL https://raw.githubusercontent.com/yuki-js/dotfiles/master/install.sh)"
+sh -c "$(curl -fSsL https://l.aoki.app/dotfiles)"
 ```
 
 ## Configuration

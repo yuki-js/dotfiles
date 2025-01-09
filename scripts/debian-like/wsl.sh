@@ -12,9 +12,11 @@ MAKE_ME_ROOT="sudo"
 
 # if not wsl2, pass
 if [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
-  echo "Not WSL2, skipping"
+  echo "Not a WSL2, skipping"
   exit 0
 fi
+
+echo "Making WSL environment better..."
 
 # cp /etc/wsl.conf
 # backup if already exist

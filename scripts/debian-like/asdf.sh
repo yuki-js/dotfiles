@@ -7,6 +7,8 @@ if [ -n "${DF_NO_ASDF:-}" ] && [ "$DF_NO_ASDF" = "1" ]; then
   exit 0
 fi
 
+echo "Setting up asdf..."
+
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
 

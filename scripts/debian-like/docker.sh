@@ -15,6 +15,8 @@ fi
 MAKE_ME_ROOT="sudo"
 # assume debian like distro, no check
 
+echo "Installing Docker Engine..."
+
 # install docker from official instruction
 $MAKE_ME_ROOT install -m 0755 -d /etc/apt/keyrings
 $MAKE_ME_ROOT curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc

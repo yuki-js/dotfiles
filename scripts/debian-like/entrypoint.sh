@@ -9,3 +9,5 @@ set -eu
 ./wsl.sh
 ./asdf.sh
 ./docker.sh
+
+echo "Installation completed! Please restart your shell."

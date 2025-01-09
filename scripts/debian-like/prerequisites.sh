@@ -10,6 +10,8 @@ fi
 MAKE_ME_ROOT="sudo"
 # assume debian like distro, no check
 
+echo "Installing prerequisites..."
+
 # install packages
 echo "Installing packages..."
 $MAKE_ME_ROOT apt-get update

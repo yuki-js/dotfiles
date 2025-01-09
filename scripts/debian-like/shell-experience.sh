@@ -10,6 +10,8 @@ fi
 MAKE_ME_ROOT="sudo"
 # assume debian like distro, no check
 
+echo "Setting up shell experience..."
+
 FILES_TO_BE_TRANSPLANTED_TO_HOME=(
   $HOME/codes/dotfiles/cfgs/.zshrc
 )

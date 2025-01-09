@@ -12,6 +12,8 @@ echo "Setting up asdf..."
 
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
 
+. $HOME/.asdf/asdf.sh
+
 # setup node.js with asdf
 asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 asdf nodejs update-nodebuild

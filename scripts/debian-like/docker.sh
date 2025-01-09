@@ -17,6 +17,8 @@ MAKE_ME_ROOT="sudo"
 
 # install docker from official instruction
 $MAKE_ME_ROOT install -m 0755 -d /etc/apt/keyrings
+$MAKE_ME_ROOT curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+$MAKE_ME_ROOT chmod a+r /etc/apt/keyrings/docker.asc
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable" | $MAKE_ME_ROOT tee /etc/apt/sources.list.d/docker.list 
 $MAKE_ME_ROOT apt update
 $MAKE_ME_ROOT apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin

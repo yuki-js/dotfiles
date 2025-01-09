@@ -6,5 +6,6 @@ set -eu
 ./prerequisites.sh
 ./ssh.sh
 ./shell-experience.sh
+./asdf.sh
 ./wsl.sh
 ./docker.sh

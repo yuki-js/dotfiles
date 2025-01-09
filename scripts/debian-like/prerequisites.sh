@@ -17,7 +17,7 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   curl \
   git \
   jq \
-  make \
+  build-essential \
   zsh \
   openssh-server \
   ssh-import-id \

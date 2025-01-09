@@ -20,4 +20,5 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   make \
   zsh \
   openssh-server \
-  ssh-import-id
+  ssh-import-id \
+  ca-certificates

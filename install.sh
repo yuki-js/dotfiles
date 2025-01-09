@@ -19,26 +19,27 @@ if [ $(id -u) -eq 0 ]; then
   exit 1
 fi
 MAKE_ME_ROOT="sudo"
-
 # Confirmation phase
-echo "Hello! This script will install dotfiles to your machine."
-echo -n "What is your GitHub name? "
-read GHUSER
+if [ "${DF_SKIP_CONFIRM:-0}" -ne 1 ]; then
+  echo "Hello! This script will install dotfiles to your machine."
+  echo -n "What is your GitHub name? "
+  read GHUSER
 
-# check if the GHUSER is OWNER
-if [ $GHUSER != $OWNER ]; then
-  echo "Sorry, this script is not for you."
-  exit 1
-fi
+  # check if the GHUSER is OWNER
+  if [ "$GHUSER" != "$OWNER" ]; then
+    echo "Sorry, this script is not for you."
+    exit 1
+  fi
 
-# Confirm that the user wants to begin the installation
-echo "The dotfiles will be installed to $HOME/codes/dotfiles (if not exist, will be created)"
-echo -n "Do you want to begin the installation? (y/N) "
-read CONFIRM
+  # Confirm that the user wants to begin the installation
+  echo "The dotfiles will be installed to $HOME/codes/dotfiles (if not exist, will be created)"
+  echo -n "Do you want to begin the installation? (y/N) "
+  read CONFIRM
 
-if [ $CONFIRM != "y" ]; then
-  echo "Aborting installation"
-  exit 1
+  if [ "$CONFIRM" != "y" ]; then
+    echo "Aborting installation"
+    exit 1
+  fi
 fi
 
 # Prerequisites installation phase

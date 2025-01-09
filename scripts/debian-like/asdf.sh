@@ -1,6 +1,13 @@
 #!/bin/bash
 set -eu
 
+# if DF_NO_ASDF is present, and DF_NO_ASDF is 1, skip docker installation
+if [ -n "${DF_NO_ASDF:-}" ] && [ "$DF_NO_ASDF" = "1" ]; then
+  echo "Skip asdf installation"
+  exit 0
+fi
+
+
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
 
 # setup node.js with asdf

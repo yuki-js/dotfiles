@@ -23,4 +23,6 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   zsh \
   openssh-server \
   ssh-import-id \
-  ca-certificates
+  ca-certificates \
+  libssl-dev \
+  zlib1g-dev 

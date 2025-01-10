@@ -25,7 +25,7 @@ for file in ${FILES_TO_BE_TRANSPLANTED_TO_HOME[@]}; do
 done
 
 # set zsh as default shell
-chsh -s $(which zsh)
+sudo chsh -s $(which zsh) $(whoami)
 
 # git configs
 git config --global user.email "me@aoki.app"

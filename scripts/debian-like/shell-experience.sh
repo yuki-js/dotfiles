@@ -23,6 +23,10 @@ for file in ${FILES_TO_BE_TRANSPLANTED_TO_HOME[@]}; do
   ln -sf $file $HOME
   echo "Made a symbolic link ($file -> $HOME)"
 done
+# create .hushlogin if not exists
+if [ ! -f "$HOME/.hushlogin" ]; then
+  touch "$HOME/.hushlogin"
+fi
 
 # set zsh as default shell
 sudo chsh -s $(which zsh) $(whoami)

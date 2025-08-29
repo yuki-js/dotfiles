@@ -7,7 +7,7 @@ set -eu
 ./ssh.sh
 ./shell-experience.sh
 ./wsl.sh
-./asdf.sh
 ./docker.sh
+./install-latest-languages.sh
 
 echo "Installation completed! Please restart your shell."

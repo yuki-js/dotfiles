@@ -54,10 +54,6 @@ alias less='less -NM'
 export CLICOLOR=1
 export LSCOLORS=DxGxcxdxCxegedabagacad
 
-# asdf
-. "$HOME/.asdf/asdf.sh"
-fpath=($HOME/.asdf/completions $fpath)
-
 if [ -x ~/.machinespecificrc ]; then
     . ~/.machinespecificrc
 fi

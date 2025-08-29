@@ -25,4 +25,5 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   ssh-import-id \
   ca-certificates \
   libssl-dev \
-  zlib1g-dev 
+  zlib1g-dev \
+  python3-launchpadlib

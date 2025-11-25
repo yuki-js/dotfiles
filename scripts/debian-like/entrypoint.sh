@@ -28,6 +28,15 @@ else
   echo "Skip Node.js installation."
 fi
 
+# AI CLI tools (OpenAI Codex, Google Gemini, Anthropic Claude)
+if [ "${DF_NO_NODEJS:-0}" = "1" ]; then
+  echo "Skip AI CLI installation (DF_NO_NODEJS=1)."
+elif [ "${DF_NO_AI_CLI:-0}" = "0" ]; then
+  bash ./install-ai-cli.sh
+else
+  echo "Skip AI CLI installation."
+fi
+
 # Python install
 if [ "${DF_NO_PYTHON:-0}" = "0" ]; then
   ./install-latest-python.sh

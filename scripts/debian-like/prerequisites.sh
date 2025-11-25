@@ -26,4 +26,14 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   ca-certificates \
   libssl-dev \
   zlib1g-dev \
+  iputils-ping \
+  net-tools \
+  iproute2 \
+  dnsutils \
+  traceroute \
+  mtr-tiny \
+  lsof \
+  strace \
+  htop \
+  iotop \
   python3-launchpadlib

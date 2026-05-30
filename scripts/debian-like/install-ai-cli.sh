@@ -6,7 +6,6 @@ if [ $(id -u) -eq 0 ]; then
   echo "Fatal error: This script must not be run as root"
   exit 1
 fi
-MAKE_ME_ROOT="sudo"
 
 # Allow skip via env var (main gating is in entrypoint)
 if [ "${DF_NO_AI_CLI:-0}" = "1" ]; then
@@ -22,26 +21,28 @@ fi
 
 echo "Installing AI CLI tools (OpenAI Codex, Antigravity CLI, Anthropic Claude)..."
 
-# Require npm
-if ! command -v npm >/dev/null 2>&1; then
-  echo -e "\e[31mnpm is not installed. Enable Node.js installation (DF_NO_NODEJS=0) or install npm manually.\e[m"
+INSTALLER_URL="https://antigravity.google/cli/install.sh"
+INSTALLER_FILE="$(mktemp)"
+trap 'rm -f "$INSTALLER_FILE"' EXIT
+
+if ! command -v curl >/dev/null 2>&1; then
+  echo -e "\e[31mcurl is not installed. Enable prerequisites installation or install curl manually.\e[m"
   echo -e "\a"
   exit 1
 fi
 
-# Fixed packages to install
-PACKAGES=("@openai/codex" "antigravity-cli" "@anthropic-ai/claude-code")
-
-
-# Always use sudo for global installs
-if ! $MAKE_ME_ROOT npm install -g --no-audit --no-fund "${PACKAGES[@]}"; then
+if ! curl -fsSL "$INSTALLER_URL" -o "$INSTALLER_FILE"; then
   echo -e "\e[31mAI CLI installation failed.\e[m"
-  echo "Tried to install: ${PACKAGES[*]}"
+  echo "Failed to download: $INSTALLER_URL"
   echo -e "\a"
   exit 1
 fi
 
-echo "Installed global packages:"
-npm ls -g --depth=0 || true
+if ! bash "$INSTALLER_FILE"; then
+  echo -e "\e[31mAI CLI installation failed.\e[m"
+  echo "Failed to execute: $INSTALLER_URL"
+  echo -e "\a"
+  exit 1
+fi
 
 echo "AI CLI installation completed."

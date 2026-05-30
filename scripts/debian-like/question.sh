@@ -53,7 +53,7 @@ while :; do
     echo "DF_NO_PYTHON=1" >> "$QUESTION_RESULT_FILE"
   fi
 
-  # AI CLI tools (OpenAI Codex, Antigravity CLI, Anthropic Claude)
+  # AI CLI tools (OpenAI Codex, Google Antigravity, Anthropic Claude Code)
   echo "Do you want to install AI CLI tools? (y/n) [y]"
   read install_ai_cli
   install_ai_cli=${install_ai_cli:-y}

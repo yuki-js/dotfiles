@@ -19,7 +19,7 @@ if [ "${DF_NO_NODEJS:-0}" = "1" ]; then
   exit 0
 fi
 
-echo "Installing AI CLI tools (OpenAI Codex, Antigravity CLI, Anthropic Claude)..."
+echo "Installing AI CLI tools (OpenAI Codex, Google Antigravity, Anthropic Claude Code)..."
 
 INSTALLER_URL="https://antigravity.google/cli/install.sh"
 INSTALLER_FILE="$(mktemp)"
@@ -27,6 +27,12 @@ trap 'rm -f "$INSTALLER_FILE"' EXIT
 
 if ! command -v curl >/dev/null 2>&1; then
   echo -e "\e[31mcurl is not installed. Enable prerequisites installation or install curl manually.\e[m"
+  echo -e "\a"
+  exit 1
+fi
+
+if ! command -v npm >/dev/null 2>&1; then
+  echo -e "\e[31mnpm is not installed. Enable Node.js installation or install npm manually.\e[m"
   echo -e "\a"
   exit 1
 fi
@@ -41,6 +47,13 @@ fi
 if ! bash "$INSTALLER_FILE"; then
   echo -e "\e[31mAI CLI installation failed.\e[m"
   echo "Failed to execute: $INSTALLER_URL"
+  echo -e "\a"
+  exit 1
+fi
+
+if ! npm install -g --no-audit --no-fund @openai/codex @anthropic-ai/claude-code; then
+  echo -e "\e[31mAI CLI installation failed.\e[m"
+  echo "Failed to install: @openai/codex @anthropic-ai/claude-code"
   echo -e "\a"
   exit 1
 fi

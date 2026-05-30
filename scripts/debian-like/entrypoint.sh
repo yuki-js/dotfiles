@@ -28,7 +28,7 @@ else
   echo "Skip Node.js installation."
 fi
 
-# AI CLI tools (OpenAI Codex, Antigravity CLI, Anthropic Claude)
+# AI CLI tools (OpenAI Codex, Google Antigravity, Anthropic Claude Code)
 if [ "${DF_NO_NODEJS:-0}" = "1" ]; then
   echo "Skip AI CLI installation (DF_NO_NODEJS=1)."
 elif [ "${DF_NO_AI_CLI:-0}" = "0" ]; then

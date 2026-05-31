@@ -36,5 +36,4 @@ $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   strace \
   htop \
   iotop \
-  python3-launchpadlib \
-  unzip
+  python3-launchpadlib

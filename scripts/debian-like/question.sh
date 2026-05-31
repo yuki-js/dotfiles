@@ -15,7 +15,6 @@ if [ "${DF_SKIP_CONFIRM:-0}" = "1" ]; then
   echo "DF_NO_DOCKER=${DF_NO_DOCKER:-0}" >> "$QUESTION_RESULT_FILE"
   echo "DF_NO_NODEJS=${DF_NO_NODEJS:-0}" >> "$QUESTION_RESULT_FILE"
   echo "DF_NO_PYTHON=${DF_NO_PYTHON:-0}" >> "$QUESTION_RESULT_FILE"
-  echo "DF_NO_AI_CLI=${DF_NO_AI_CLI:-0}" >> "$QUESTION_RESULT_FILE"
   echo "Questions skipped (auto mode)."
   exit 0
 fi
@@ -53,23 +52,12 @@ while :; do
     echo "DF_NO_PYTHON=1" >> "$QUESTION_RESULT_FILE"
   fi
 
-  # AI CLI tools (OpenAI Codex, Google Antigravity, Anthropic Claude Code)
-  echo "Do you want to install AI CLI tools? (y/n) [y]"
-  read install_ai_cli
-  install_ai_cli=${install_ai_cli:-y}
-  if [ "$install_ai_cli" = "y" ]; then
-    echo "DF_NO_AI_CLI=0" >> "$QUESTION_RESULT_FILE"
-  else
-    echo "DF_NO_AI_CLI=1" >> "$QUESTION_RESULT_FILE"
-  fi
-
   # Show summary and confirm
   echo ""
   echo "===== Setup Summary ====="
   echo "  Docker:   $install_docker"
   echo "  Node.js:  $install_nodejs"
   echo "  Python:   $install_python"
-  echo "  AI CLI:   $install_ai_cli"
   echo "========================="
   echo "Is this configuration OK? (y/n) [y]"
   read confirm

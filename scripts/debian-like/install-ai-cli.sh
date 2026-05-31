@@ -40,13 +40,11 @@ if ! bash "$INSTALLER_FILE"; then
   exit 1
 fi
 
-for package in @openai/codex @anthropic-ai/claude-code; do
-  if ! $MAKE_ME_ROOT npm install -g --no-audit --no-fund "$package"; then
-    echo -e "\e[31mAI CLI installation failed.\e[m"
-    echo "Failed to install: $package"
-    echo -e "\a"
-    exit 1
-  fi
-done
+if ! $MAKE_ME_ROOT npm install -g --no-audit --no-fund @openai/codex @anthropic-ai/claude-code; then
+  echo -e "\e[31mAI CLI installation failed.\e[m"
+  echo "Failed to install: @openai/codex @anthropic-ai/claude-code"
+  echo -e "\a"
+  exit 1
+fi
 
 echo "AI CLI installation completed."

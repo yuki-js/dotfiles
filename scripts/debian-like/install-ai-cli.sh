@@ -6,6 +6,7 @@ if [ $(id -u) -eq 0 ]; then
   echo "Fatal error: This script must not be run as root"
   exit 1
 fi
+MAKE_ME_ROOT="sudo"
 
 # Allow skip via env var (main gating is in entrypoint)
 if [ "${DF_NO_AI_CLI:-0}" = "1" ]; then
@@ -25,18 +26,6 @@ INSTALLER_URL="https://antigravity.google/cli/install.sh"
 INSTALLER_FILE="$(mktemp)"
 trap 'rm -f "$INSTALLER_FILE"' EXIT
 
-if ! command -v curl >/dev/null 2>&1; then
-  echo -e "\e[31mcurl is not installed. Enable prerequisites installation or install curl manually.\e[m"
-  echo -e "\a"
-  exit 1
-fi
-
-if ! command -v npm >/dev/null 2>&1; then
-  echo -e "\e[31mnpm is not installed. Enable Node.js installation or install npm manually.\e[m"
-  echo -e "\a"
-  exit 1
-fi
-
 if ! curl -fsSL "$INSTALLER_URL" -o "$INSTALLER_FILE"; then
   echo -e "\e[31mAI CLI installation failed.\e[m"
   echo "Failed to download: $INSTALLER_URL"
@@ -51,7 +40,7 @@ if ! bash "$INSTALLER_FILE"; then
   exit 1
 fi
 
-if ! npm install -g --no-audit --no-fund @openai/codex @anthropic-ai/claude-code; then
+if ! $MAKE_ME_ROOT npm install -g --no-audit --no-fund @openai/codex @anthropic-ai/claude-code; then
   echo -e "\e[31mAI CLI installation failed.\e[m"
   echo "Failed to install: @openai/codex @anthropic-ai/claude-code"
   echo -e "\a"

@@ -20,7 +20,7 @@ if [ "${DF_NO_NODEJS:-0}" = "1" ]; then
   exit 0
 fi
 
-echo "Installing AI CLI tools (OpenAI Codex, Google Gemini, Anthropic Claude)..."
+echo "Installing AI CLI tools (OpenAI Codex, Anthropic Claude)..."
 
 # Require npm
 if ! command -v npm >/dev/null 2>&1; then
@@ -30,7 +30,7 @@ if ! command -v npm >/dev/null 2>&1; then
 fi
 
 # Fixed packages to install
-PACKAGES=("@openai/codex" "@google/gemini-cli" "@anthropic-ai/claude-code")
+PACKAGES=("@openai/codex" "@anthropic-ai/claude-code")
 
 
 # Always use sudo for global installs
@@ -43,5 +43,9 @@ fi
 
 echo "Installed global packages:"
 npm ls -g --depth=0 || true
+
+echo "Installing Google Antigravity CLI..."
+
+curl -fsSL https://antigravity.google/cli/install.sh | bash
 
 echo "AI CLI installation completed."

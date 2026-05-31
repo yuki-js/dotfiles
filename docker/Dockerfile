@@ -32,4 +32,8 @@ RUN sh -c "$(curl -fSsL https://l.aoki.app/dotfiles)"
 # re-enable password
 RUN echo "$USERNAME:1919" | sudo chpasswd
 
+# Record the build date as ~/.build_date
+RUN echo `date -u +"%Y-%m-%dT%H:%M:%SZ"` > ~/.build_date
+
+
 CMD ["/usr/bin/zsh"]

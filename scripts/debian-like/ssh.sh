@@ -8,6 +8,11 @@ if [ $(id -u) -eq 0 ]; then
 fi
 
 # assume debian like distro, no check
+if [ "${DF_NO_SSH_IMPORT:-0}" = "1" ]; then
+  echo "Skip SSH key import."
+  exit 0
+fi
+
 echo "Setting SSH keys..."
 
 # create .ssh directory

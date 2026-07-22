@@ -1,8 +1,8 @@
-FROM kalilinux/kali-rolling:latest
+FROM debian:bookworm-slim
 
-RUN apt-get update \
-    && apt-get upgrade -y \
-    && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
+RUN apt-get -o Acquire::Retries=5 update \
+    && DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=5 upgrade -y \
+    && DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::Retries=5 install -y --no-install-recommends \
         sudo curl ca-certificates
 
 # Create a non-root user
@@ -27,7 +27,12 @@ WORKDIR /home/$USERNAME
 # Install dotfiles
 ENV DF_NO_DOCKER=1
 ENV DF_SKIP_CONFIRM=1
-RUN sh -c "$(curl -fSsL https://l.aoki.app/dotfiles)"
+ENV DF_NO_NODEJS=1
+ENV DF_NO_PYTHON=1
+ENV DF_NO_AI_CLI=1
+ENV DF_NO_SSH_IMPORT=1
+COPY --chown=$USERNAME:$USERNAME . /home/$USERNAME/codes/dotfiles
+RUN bash /home/$USERNAME/codes/dotfiles/scripts/entrypoint.sh
 
 # re-enable password
 RUN echo "$USERNAME:1919" | sudo chpasswd

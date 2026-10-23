@@ -13,6 +13,7 @@ sh -c "$(curl -fSsL https://l.aoki.app/dotfiles)"
 
 ```sh
 export DF_NO_DOCKER=1 # Disable docker installation
+export DF_NO_SSH_HARDENING=1 # Disable sshd recommended settings installation
 export DF_BRANCH=master # Use master branch
 export DF_SKIP_CONFIRM=1 # Skip pre-install confirmation prompt
 export DF_NO_NODEJS=1 # Disable Node.js installation

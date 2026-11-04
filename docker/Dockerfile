@@ -27,7 +27,6 @@ WORKDIR /home/$USERNAME
 # Install dotfiles
 ENV DF_NO_DOCKER=1
 ENV DF_SKIP_CONFIRM=1
-ENV DF_NO_SSH_IMPORT=1
 RUN sh -c "$(curl -fSsL https://l.aoki.app/dotfiles)"
 
 # re-enable password

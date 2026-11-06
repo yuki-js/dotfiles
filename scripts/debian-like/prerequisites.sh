@@ -18,6 +18,7 @@ $MAKE_ME_ROOT apt-get update
 $MAKE_ME_ROOT apt-get install --no-install-recommends -y \
   curl \
   git \
+  ripgrep \
   jq \
   build-essential \
   zsh \

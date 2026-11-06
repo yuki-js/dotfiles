@@ -36,4 +36,8 @@ $MAKE_ME_ROOT cp -f $HOME/codes/dotfiles/cfgs/sshd/10-recommended-settings.conf 
 
 # validate sshd config and restart sshd
 $MAKE_ME_ROOT sshd -t
-$MAKE_ME_ROOT systemctl restart ssh
+if command -v systemctl >/dev/null 2>&1 && [ -d /run/systemd/system ]; then
+  $MAKE_ME_ROOT systemctl restart ssh
+else
+  echo "Skip ssh service restart (systemd is not available)."
+fi
